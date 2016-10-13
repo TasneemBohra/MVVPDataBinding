@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="com.tasneembohra.mvvpdatabinding.model.User"/>
+        <variable
+            name="handler"
+            type="com.tasneembohra.mvvpdatabinding.viewmodel.Handlers"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="save"
+            android:textColor="#FFFFFF"
+            android:background="@color/colorAccent"
+            android:onClick="@{() -> handler.onSaveClick(user)}"/>
+    </LinearLayout>
+</layout>
